@@ -5,7 +5,7 @@ fieldset{
 
 input[type="text"] , input[type="password"] {
     font-family: JetBrains Mono ;
-    background-color: #22262B;
+    background: transparent;
     color: white;
     height: 40px;
     width: 80%;
@@ -13,6 +13,10 @@ input[type="text"] , input[type="password"] {
     border-bottom: solid 2px #428DA5;
     font-size: large;
     margin: 1em;
+}
+
+input:invalid{
+    animation: shake 0.14s 3;
 }
 
 .bttn{
@@ -28,4 +32,10 @@ input[type="text"] , input[type="password"] {
 
 .bttn:hover{
     background-color: #00C0FD;
+}
+
+@keyframes shake{
+    0%, 100%{ translate: 0;}
+    25% {translate: 8px 0;}
+    75% {translate: -8px 0;}
 }
