@@ -1,6 +1,6 @@
 import React from "react"
 import "../styles/employeePanel.css"
-import {Form} from "./Form.js"
+import Form from "./Form"
 import { Logo } from './Logo';
 
 export class EmployeePanel extends React.Component
