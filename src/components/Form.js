@@ -31,7 +31,7 @@ function Form() {
             name="username"
             id="username"
             onChange={(e) => {setUsername(e.target.value)}}
-            placeholder="username"
+            placeholder="Username"
             required
           />
         </fieldset>
