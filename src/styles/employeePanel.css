@@ -7,16 +7,21 @@ body{
     background-color: #22262B;
     color: white;
     width: 60vw;
-    height: 50vh;
-    margin: 20vh 20vw;
-    padding-top: 2em;
+    height: 65vh;
+    margin: 15vh 20vw;
+    padding-top: 0.5em;
     padding-bottom: 2em;
     text-align: center;
 }
 
 h1{
+    padding-top: 1em;
     font-size: 48px;
     font-weight: 500;
     color: white;
     border-bottom: solid #428DA5;
+}
+
+.logoFig{
+    display: inline;
 }
