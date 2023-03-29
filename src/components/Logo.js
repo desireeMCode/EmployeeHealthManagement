@@ -10,7 +10,7 @@ export class Logo extends React.Component
                 <div class = "ring"></div>
                 <div class = "ring"></div>
                 <div class = "ring"></div>
-                <h2 class="logoName">EmpHealth</h2>
+                <h1 class="logoName">EmpHealth</h1>
             </div>
         )
 

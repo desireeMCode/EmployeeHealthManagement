@@ -10,7 +10,7 @@ export class EmployeePanel extends React.Component
         return(
             <div className="container">
                 <Logo class =" logoFig"/>
-                <h1 className="title" > Employee Panel </h1>
+                <h2 className="title" > Employee Panel </h2>
                 <Form/>
             </div>
             

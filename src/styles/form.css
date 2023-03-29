@@ -10,7 +10,7 @@ input[type="text"] , input[type="password"] {
     height: 40px;
     width: 80%;
     border: none;
-    border-bottom: solid #428DA5;
+    border-bottom: solid 2px #428DA5;
     font-size: large;
     margin: 1em;
 }
