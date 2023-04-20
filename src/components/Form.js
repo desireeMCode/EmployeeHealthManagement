@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link , useParams, useNavigate} from "react-router-dom";
+import { toast } from "react-toastify";
 import "../styles/form.css";
 
 function Form() {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loginStatus, setLoginStatus] = useState("");
@@ -15,6 +18,11 @@ function Form() {
     })
     .then(res => console.log(res))
     .catch(err => console.log(err))
+
+    toast.success("Logged In Succesfully")
+        setTimeout(() =>{
+          navigate("/viewinsurances", 200)
+        })
 
     }
 
