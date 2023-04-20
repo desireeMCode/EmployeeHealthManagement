@@ -20,7 +20,7 @@ function Form() {
 
   return (
     <div>
-      <form action="">
+      <form onSubmit={login}>
         <fieldset>
           <input
             type="text"
