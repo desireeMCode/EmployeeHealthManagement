@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link , useParams, useNavigate} from "react-router-dom";
 import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import "../styles/addInsurance.css";
 
+
 function AddInsurance() {
+  const navigate = useNavigate();
   const [insurance_name, set_insurance_name] = useState("");
   const [insurance_premium, set_insurance_premium] = useState("");
   const [insurance_age_limit, set_insurance_age_limit] = useState("");
@@ -22,8 +25,9 @@ function AddInsurance() {
         })
         .then((res) => console.log(res.data))
         .catch((err) => toast.error(err));
+        toast.success("Insurance Added Succesfully")
         setTimeout(() =>{
-          Navigate("/viewinsurances", 500)
+          navigate("/viewinsurances", 200)
         })
     }
   };
