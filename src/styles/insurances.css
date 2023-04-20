@@ -39,11 +39,13 @@
     display: inline-block;
     border-radius: 5px;
     font-size: 16px;
-    font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
 }
-
+.btn-insurance {
+    margin-left: 600px;
+    margin-bottom: 20px;
+}
 .btn-edit {
     background-color: #008cba;
 }

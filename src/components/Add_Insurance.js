@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link , useParams, useNavigate} from "react-router-dom";
+import { toast } from "react-toastify";
 import "../styles/addInsurance.css";
 
 function AddInsurance() {
@@ -9,20 +11,26 @@ function AddInsurance() {
 
   const insert_insurance = (e) => {
     e.preventDefault();
-    axios
-      .post("http://localhost:3001/insertinsurance", {
-        insurance_name: insurance_name,
-        insurance_premium: insurance_premium,
-        insurance_age_limit: insurance_age_limit,
-      })
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
+    if (!insurance_name || !insurance_premium || !insurance_age_limit) {
+      toast.error("please provide value into each input field");
+    } else {
+      axios
+        .post("http://localhost:3001/insertinsurance", {
+          insurance_name: insurance_name,
+          insurance_premium: insurance_premium,
+          insurance_age_limit: insurance_age_limit,
+        })
+        .then((res) => console.log(res.data))
+        .catch((err) => toast.error(err));
+        setTimeout(() =>{
+          Navigate("/viewinsurances", 500)
+        })
+    }
   };
 
   return (
     <div>
       <form action="">
-
         <fieldset>
           <input
             type="text"
@@ -68,7 +76,9 @@ function AddInsurance() {
           {" "}
           Add Insurance{" "}
         </button>
-        
+        <Link to="/viewinsurances">
+          <input type="button" value="Go Back" />
+        </Link>
       </form>
     </div>
   );

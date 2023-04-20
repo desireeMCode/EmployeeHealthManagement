@@ -17,6 +17,9 @@ function ViewInsurances() {
 
   return (
     <div style={{ marginTop: "150px" }}>
+      <Link to="/insertinsurance">
+        <button className="btn btn-insurance">Add Insurance</button>
+      </Link>
       <table className="styled-table">
         <thead>
           <tr>
@@ -42,8 +45,6 @@ function ViewInsurances() {
                   <Link to={`/update/${item.insuranceId}`}>
                     <button className="btn btn-view"> View</button>
                   </Link>
-
-
                 </td>
               </tr>
             );

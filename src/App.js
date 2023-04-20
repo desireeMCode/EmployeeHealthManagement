@@ -14,6 +14,7 @@ function App() {
           <Route path = '/viewinsurances' element = {<ViewInsurances/>}/>
           <Route path = '/insertinsurance' element = {<InsertInsurance/>}/>
 
+
         </Routes>
       </div>
     </BrowserRouter>

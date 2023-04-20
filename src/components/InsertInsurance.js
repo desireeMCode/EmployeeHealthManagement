@@ -10,7 +10,10 @@ export class InsertInsurance extends React.Component
         return(
             <div className="container">
                 <Logo className =" logoFig"/>
-                <h2 className="title" > Add Insurance </h2>
+                <br></br>
+                <br></br>
+                <br></br>
+                <h1 className="title" > Add Insurance </h1>
                 <AddInsurance/>
             </div>
         )
