@@ -1,50 +1,80 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link , useParams, useNavigate} from "react-router-dom";
-import { toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../styles/addInsurance.css";
 
-
+const initialState = {
+  insurance_name: "",
+  insurance_premium: "",
+  insurance_age_limit: "",
+};
 function AddInsurance() {
-  const navigate = useNavigate();
-  const [insurance_name, set_insurance_name] = useState("");
-  const [insurance_premium, set_insurance_premium] = useState("");
-  const [insurance_age_limit, set_insurance_age_limit] = useState("");
+  const [state, setState] = useState(initialState);
 
-  const insert_insurance = (e) => {
+  const { insurance_name, insurance_premium, insurance_age_limit } = state;
+
+  const navigate = useNavigate();
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3001/getinsurance/${id}`)
+      .then((resp) => setState({ ...resp.data[0] }));
+  }, [id]);
+
+  const handleinputChange = (e) => {
+    const { name, value } = e.target;
+    setState({ ...state, [name]: value });
+  };
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!insurance_name || !insurance_premium || !insurance_age_limit) {
       toast.error("please provide value into each input field");
     } else {
-      axios
-        .post("http://localhost:3001/insertinsurance", {
+      if (!id) {
+        axios
+          .post("http://localhost:3001/insertinsurance", {
+            insurance_name: insurance_name,
+            insurance_premium: insurance_premium,
+            insurance_age_limit: insurance_age_limit,
+          })
+          .then((res) => console.log(res.data))
+          .catch((err) => toast.error(err));
+        toast.success("Insurance Added Succesfully");
+      }
+      else{
+        axios.put(`http://localhost:3001/editinsurance/${id}`, {
           insurance_name: insurance_name,
           insurance_premium: insurance_premium,
           insurance_age_limit: insurance_age_limit,
         })
         .then((res) => console.log(res.data))
         .catch((err) => toast.error(err));
-        toast.success("Insurance Added Succesfully")
-        setTimeout(() =>{
-          navigate("/viewinsurances", 200)
-        })
+      toast.success("Insurance Updated Succesfully");
+      }
+
+      setTimeout(() => {
+        navigate("/viewinsurances", 1000);
+      });
     }
   };
 
   return (
     <div>
-      <form action="">
+      <ToastContainer />
+      <form onSubmit={handleSubmit}>
         <fieldset>
           <input
             type="text"
             name="insurance_name"
             id="insurance_name"
-            onChange={(e) => {
-              set_insurance_name(e.target.value);
-            }}
+            value={insurance_name || ""}
             placeholder="Insurance Name"
             required
+            onChange={handleinputChange}
           />
         </fieldset>
 
@@ -54,11 +84,10 @@ function AddInsurance() {
             type="number"
             name="insurance_premium"
             id="insurance_premium"
-            onChange={(e) => {
-              set_insurance_premium(e.target.value);
-            }}
+            value={insurance_premium || ""}
             placeholder="Insurance Price"
             required
+            onChange={handleinputChange}
           />
         </fieldset>
 
@@ -68,18 +97,15 @@ function AddInsurance() {
             type="Number"
             name="insurance_age_limit"
             id="insurance_age_limit"
-            onChange={(e) => {
-              set_insurance_age_limit(e.target.value);
-            }}
+            value={insurance_age_limit || ""}
             placeholder="Insurance Age limit"
             required
+            onChange={handleinputChange}
           />
         </fieldset>
 
-        <button type="submit" className="bttn" onClick={insert_insurance}>
-          {" "}
-          Add Insurance{" "}
-        </button>
+        
+        <input type="submit" value = {id ? "Update" : "Save"}/>
         <Link to="/viewinsurances">
           <input type="button" value="Go Back" />
         </Link>
