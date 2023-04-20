@@ -34,10 +34,10 @@ function ViewInsurances() {
       <table className="styled-table">
         <thead>
           <tr>
-            <th style={{ textAlign: "center" }}>Insurance Id: </th>
-            <th style={{ textAlign: "center" }}>Insurance Name: </th>
-            <th style={{ textAlign: "center" }}>Insurance Premium:</th>
-            <th style={{ textAlign: "center" }}>Insurance Age Limit</th>
+            <th style={{ textAlign: "center" }}></th>
+            <th style={{ textAlign: "center" }}>Insurance Name</th>
+            <th style={{ textAlign: "center" }}>Insurance Premium</th>
+            <th style={{ textAlign: "center" }}>Insurance Age Limit </th>
           </tr>
         </thead>
         <tbody>
@@ -60,9 +60,6 @@ function ViewInsurances() {
                     Delete
                   </button>
 
-                  <Link to={`/update/${item.insuranceID}`}>
-                    <button className="btn btn-view"> View</button>
-                  </Link>
                 </td>
               </tr>
             );
