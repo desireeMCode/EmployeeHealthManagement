@@ -6,14 +6,16 @@ export class Logo extends React.Component
     render()
     {
         return(
-            <div class = "logo">
-                <div class = "ring"></div>
-                <div class = "ring"></div>
-                <div class = "ring"></div>
-                <h1 class="logoName">EmpHealth</h1>
+            <div className ="logo">
+                <div className = "ring"></div>
+                <div className = "ring"></div>
+                <div className = "ring"></div>
+                <h1 className ="logoName">EmpHealth</h1>
             </div>
         )
 
     }
     
 }
+
+export default Logo;

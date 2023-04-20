@@ -2,6 +2,9 @@ fieldset{
     border : none; 
     text-align: center;
 }
+p{
+    color: white;
+}
 
 input[type="text"] , input[type="password"] {
     font-family: JetBrains Mono ;
