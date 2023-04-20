@@ -1,9 +1,13 @@
 .container{
+    margin: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
     background-color: #22262B;
     color: white;
     width: 60vw;
-    height: 65vh;
-    margin: 15vh 20vw;
+    align-items: center;
+    height: auto;
     padding-top: 0.5em;
     padding-bottom: 2em;
     text-align: center;

@@ -1,14 +1,22 @@
-import './App.css';
-import { EmployeePanel } from './components/EmployeePanel.js';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
+import { Login } from "./components/Login.js";
+import ViewInsurances from "./components/ViewInsurances";
+import {InsertInsurance} from './components/InsertInsurance'
 function App() {
-  //was just fooling around, you can remove the logo
   return (
-    <>
-     <EmployeePanel/>
-    </>
-    
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+  
+          <Route exact path="/" element={<Login/>} />
+          <Route path = '/viewinsurances' element = {<ViewInsurances/>}/>
+          <Route path = '/insertinsurance' element = {<InsertInsurance/>}/>
+
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
