@@ -2,35 +2,15 @@
     text-decoration: none;
 }
 
+
+
 .jc-center {
   justify-content: center;
   display:flex;
   
 }
-button.admin{
-  --text-base: 277deg, 55%, 40%;
-    --text-hover: 307deg, 72%, 86%;
-    --shadow-start: 52deg, 100%, 72%;
-    --shadow-end: 282deg, 90%, 50%;
-    --shadow-inner: 277deg, 90%, 62%;
-    all: unset;
-    color: hsla(var(--text-base), 1);
-    font: 700 1.125rem/1.2 Raleway, sans-serif;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 0.85em;
-    max-width: 100%;
-    width: 18em;
-    background: inherit;
-    background-clip: padding-box;
-    border: 5px solid hsla(var(--text-base), 1);
-    border-radius: 2em;
-    cursor: pointer;
-    position: relative;
-    margin-left: 2.5cm;
-    margin-bottom: 50em;
-  
+.logoFig{
+  display: inline;
 }
 
 
@@ -53,13 +33,14 @@ button.admin{
     text-align: center;
     padding: 0.85em;
     max-width: 100%;
-    width: 18em;
+    width: 60em;
     background: inherit;
     background-clip: padding-box;
     border: 5px solid hsla(var(--text-base), 1);
     border-radius: 2em;
     cursor: pointer;
     position: relative;
+    margin-top: 50px;
 }
 
   
@@ -69,37 +50,14 @@ button.admin{
     background-color: #fffafa; 
     background-image: linear-gradient(to left, #4400ff, #963def);
   }
-
-h2{
-  padding-top: 1em;
-  font-size: 35px;
-  font-weight: 500;
-  color: white;
-  border-bottom: solid 2px #428DA5;
-  margin: 1em 3em;
-}
+  header h1 {
+    font-family: 'Inconsolata', monospace;
+    font-size: 70px;
+    font-weight: 600;
+    background-color:#fffafa;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
   
-h3{
-    font-size: 25px;
-    font-weight: 500;
-    color: white;
-    margin: 1.5em 5em;
-}
 
-
-.homepage{
-  margin: 0;
-  margin-right: auto;
-  margin-bottom: 0;
-  margin-left: auto;
-  background-color: #22262B;
-  color: white;
-  width: 60vw;
-  align-items: center;
-  height: 80vh;
-  padding-top: 0.5em;
-  padding-bottom: 2em;
-  text-align: center;
-  border-radius: 10px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
-}
