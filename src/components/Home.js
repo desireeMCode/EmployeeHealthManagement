@@ -12,10 +12,10 @@ function Home(){
                 <h3>Please select a User Type</h3>
                 
                 <div class="flex-parent jc-center">
-                    <Link to = '/Login'  style={{ textDecoration: 'none' }}>
+                    <Link to = '/Employee'  style={{ textDecoration: 'none' }}>
                         <button type="employee" class="employee">Employee Login</button>
                     </Link>
-                    <Link to = '/Admin' style={{ textDecoration: 'none' }}>
+                    <Link to = '/Login' style={{ textDecoration: 'none' }}>
                         <button type="admin" class="admin">Admin Login</button>
                     </Link>
                 </div>

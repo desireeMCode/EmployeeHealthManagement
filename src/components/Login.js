@@ -10,7 +10,7 @@ export class Login extends React.Component
         return(
             <div className="container">
                 <Logo className =" logoFig"/>
-                <h2 className="title" > Employee Panel </h2>
+                <h2 className="title" > Admin Panel </h2>
                 {<Form/>}
             </div>
         )
